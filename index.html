@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Alena Kupris — Marketing, Design, Research</title>
+  <meta name="description" content="Alena Kupris makes people and their ideas visible through marketing, design, and research.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="hero">
+  <div class="crowd crowd--back" id="crowdBack" aria-hidden="true"></div>
+  <div class="crowd crowd--front" id="crowdFront" aria-hidden="true"></div>
+
+  <nav class="topbar mono">
+    <span>Alena Kupris</span>
+    <span class="hide-sm">Marketing / Design / Research</span>
+    <span class="hide-sm" id="clock">Moscow --:--</span>
+    <a href="#contact" data-cursor="open">Contact ↗</a>
+  </nav>
+
+  <h1 class="hero__title">
+    I make people<br>and their ideas<br>
+    <span class="circled">visible<svg viewBox="0 0 300 90" preserveAspectRatio="none" aria-hidden="true"><path class="draw" d="M20 50 C30 10,240 0,285 30 C305 55,250 85,140 82 C40 80,5 65,25 35"/></svg></span>
+  </h1>
+
+  <div class="hero__hint">
+    <p class="hand">move your cursor —<br>find someone</p>
+    <p class="mono">(scroll ↓)</p>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ ABOUT ============ -->
+<section class="sec about">
+  <div>
+    <p class="mono label">(01) About</p>
+    <div class="ph ph--portrait" data-img="img/portrait.webp" data-alt="Alena Kupris"><span class="mono">portrait.webp</span></div>
+  </div>
+  <div>
+    <p class="lead">I know how many talented people with meaningful work <span class="muted">disappear</span> among corporations and monopolies. I want my work to make people and their ideas <mark>visible</mark>.</p>
+    <p class="body">Through design, marketing, or research, I want to help people connect with others who value what they create.</p>
+    <div class="stats">
+      <div><p class="num">3</p><p class="mono">years in design and marketing</p></div>
+      <div><p class="num">9</p><p class="mono">B2B projects delivered</p></div>
+      <div><p class="num">30+</p><p class="mono">freelance projects</p></div>
+      <div class="stat-circled">
+        <p class="num">5.5K</p>
+        <svg viewBox="0 0 120 60" aria-hidden="true"><ellipse cx="58" cy="30" rx="54" ry="24" transform="rotate(-4 58 30)"/></svg>
+        <p class="mono">users of her own product</p>
+        <p class="hand small">started this alone</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARKOVKIN ============ -->
+<section class="sec dark park">
+  <div class="mono meta"><span>(02) Key project</span><span>Founder and CEO — Dec 2025 → now</span></div>
+  <svg class="map" viewBox="0 0 680 220" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 120 C120 90,200 150,330 110 S540 70,680 130" class="river"/>
+    <path d="M0 60 L680 180 M120 0 L260 220 M420 0 L380 220 M560 0 L620 220 M0 170 L680 40" class="street"/>
+    <circle cx="240" cy="96" r="5"/><circle cx="352" cy="118" r="5"/><circle cx="470" cy="84" r="5"/><circle cx="300" cy="160" r="5"/><circle cx="560" cy="140" r="5"/>
+  </svg>
+  <h2 class="giant">Parkovkin</h2>
+  <div class="steps">
+    <div><p class="mono accent">Problem</p><p>Free legal parking in central St. Petersburg existed, but nobody could find it.</p></div>
+    <div><p class="mono accent">Product</p><p>A free interactive map, built, launched, and run by one person.</p></div>
+    <div><p class="mono accent">Launch</p><p>Pitched to urban media and featured in print and online.</p></div>
+  </div>
+</section>
+
+<section class="sec park-detail">
+  <div>
+    <div class="browser">
+      <div class="browser__bar"><i></i><i></i><span class="mono">parkovkinspb.ru</span></div>
+      <div class="ph ph--wide" data-img="img/parkovkin-site.webp" data-alt="Parkovkin website"><span class="mono">parkovkin-site.webp</span></div>
+    </div>
+    <div class="clips">
+      <div class="clip clip--l">
+        <p class="mono">Metro St. Petersburg</p><p class="clip__title">Print edition feature</p>
+        <div class="ph ph--clip" data-img="img/metro.webp" data-alt="Metro St. Petersburg article"><span class="mono">metro.webp</span></div>
+        <svg class="pin" viewBox="0 0 30 30" aria-hidden="true"><path d="M4 4 L26 26 M26 4 L4 26"/></svg>
+      </div>
+      <div class="clip clip--r">
+        <p class="mono">MR-7</p><p class="clip__title">Project and founder story</p>
+        <div class="ph ph--clip" data-img="img/mr7.webp" data-alt="MR-7 article"><span class="mono">mr7.webp</span></div>
+        <svg class="pin pin--l" viewBox="0 0 30 30" aria-hidden="true"><path d="M4 4 L26 26 M26 4 L4 26"/></svg>
+      </div>
+    </div>
+    <p class="hand">print edition!</p>
+  </div>
+  <div class="park-stats">
+    <div><p class="num num--xl">5,500+</p><p class="mono">unique users in 1.5 months</p></div>
+    <!-- TODO: сверить охват со скриншотами MR-7 -->
+    <div><p class="num num--xl"><mark>700K+</mark></p><p class="mono">media reach</p></div>
+    <div><p class="num num--xl">2</p><p class="mono">media features, zero ad budget</p></div>
+    <a class="pill mono" href="https://parkovkinspb.ru" target="_blank" rel="noopener" data-cursor="open">Visit Parkovkin ↗</a>
+  </div>
+</section>
+
+<!-- ============ VIBRATE HIGHER ============ -->
+<section class="sec vibe">
+  <div class="mono meta"><span>(03) Key project</span><span>Freelance — film and TV</span></div>
+  <div class="vibe__grid">
+    <div class="vibe__art">
+      <div class="ph ph--dark" data-img="img/vibrate-higher.webp" data-alt="Vibrate Higher key art"><span class="mono">vibrate-higher.webp</span></div>
+      <h2 class="giant giant--md">Vibrate<br>higher</h2>
+    </div>
+    <div>
+      <p class="num num--xl">750K</p><p class="mono">views in 3 months</p>
+      <p class="body">Visual design for the series. Partners: VK, Internet Development Institute, Wink.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="sec dark">
+  <p class="mono label">(04) Experience</p>
+  <h2 class="giant giant--md">3 years.<br><span class="accent">Real teams.</span></h2>
+  <div class="jobs">
+    <article class="job">
+      <p class="mono muted">2025 — 2026</p>
+      <div><h3>GetBizMe</h3><p class="mono muted">Lead designer / marketing manager</p></div>
+      <p>Led 5 designers, shipped <span class="accent">9 B2B projects</span>, ran 2 products from research to launch. 20+ user interviews.</p>
+    </article>
+    <article class="job">
+      <p class="mono muted">2023 — 2026</p>
+      <div><h3>Devim Team</h3><p class="mono muted">UX/UI designer and SMM</p></div>
+      <p>$12K platform launch, 15+ A/B tests, <span class="accent">+40%</span> organic followers, <span class="accent">+35%</span> event attendance from HR merch.</p>
+    </article>
+    <article class="job">
+      <p class="mono muted">2023 — 2026</p>
+      <div><h3>Freelance</h3><p class="mono muted">Graphic, web, marketing</p></div>
+      <p>30+ projects: branding, SMM, websites, print.</p>
+    </article>
+    <article class="job">
+      <p class="mono muted">2023 — 2024</p>
+      <div><h3>Amigo Print</h3><p class="mono muted">Graphic designer</p></div>
+      <p>Pre-press, brochures, calendars, presentations.</p>
+    </article>
+  </div>
+  <div class="gallery4">
+    <div class="ph ph--dark ph--sq" data-img="img/devim-1.webp" data-alt="Devim merch"><span class="mono">devim-1.webp</span></div>
+    <div class="ph ph--dark ph--sq tilt-l" data-img="img/devim-2.webp" data-alt="Devim calendar"><span class="mono">devim-2.webp</span></div>
+    <div class="ph ph--dark ph--sq" data-img="img/devim-3.webp" data-alt="Devim stickers"><span class="mono">devim-3.webp</span></div>
+    <div class="ph ph--dark ph--sq" data-img="img/devim-4.webp" data-alt="Devim event"><span class="mono">devim-4.webp</span></div>
+  </div>
+  <p class="mono muted">Devim HR: merch / calendars / stickers / events</p>
+</section>
+
+<!-- ============ SOCIAL IMPACT ============ -->
+<section class="sec">
+  <p class="mono label">(05) Social impact</p>
+  <div class="two">
+    <article>
+      <div class="ph ph--wide" data-img="img/silence-of-nature.webp" data-alt="Silence of Nature event"><span class="mono">silence-of-nature.webp</span></div>
+      <h3 class="h3">Silence of Nature</h3>
+      <p class="mono">Co-founder, partnerships</p>
+      <p class="body">7-person team, <mark>110K+</mark> organic reach, 5 events with Sevkabel Port, New Holland, and Bushe.</p>
+    </article>
+    <article>
+      <div class="ph ph--wide" data-img="img/nochlezhka.webp" data-alt="Nochlezhka design work"><span class="mono">nochlezhka.webp</span></div>
+      <h3 class="h3">Nochlezhka</h3>
+      <p class="mono">Designer for volunteer projects</p>
+      <p class="body">15+ print and presentation projects, 20+ social graphics for Russia's largest homelessness charity.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ RESEARCH ============ -->
+<section class="sec two bordered">
+  <div><p class="mono label">(06) Research</p><h3 class="h3">MAYOU</h3><p class="body">Socio-artistic study, 25+ interviews. Exhibited at Erarta Museum of Contemporary Art.</p></div>
+  <div><p class="mono label accent">In progress</p><p class="lead lead--sm">Brand message semantics vs consumer query semantics. Co-authored with an associate professor of marketing, MSU.</p></div>
+</section>
+
+<!-- ============ TEACHING ============ -->
+<section class="sec bordered">
+  <p class="mono label">(07) Teaching design</p>
+  <div class="teach">
+    <div><p class="num">11</p><p class="mono">1:1 students</p></div>
+    <div><p class="num">100%</p><p class="mono">continued in design</p></div>
+    <div><p class="num">2</p><p class="mono">launched startups</p></div>
+    <p class="hand">one got a Yandex billboard ↗</p>
+  </div>
+</section>
+
+<!-- ============ BEYOND WORK ============ -->
+<section class="sec bordered beyond">
+  <p class="mono label muted">(08) Beyond work</p>
+  <div class="gallery5">
+    <div class="ph ph--sq" data-img="img/art-1.webp" data-alt="Painting"><span class="mono">art-1</span></div>
+    <div class="ph ph--sq tilt-r" data-img="img/art-2.webp" data-alt="Painting"><span class="mono">art-2</span></div>
+    <div class="ph ph--sq" data-img="img/triglinki.webp" data-alt="Triglinki exhibition"><span class="mono">triglinki</span></div>
+    <div class="ph ph--sq tilt-l" data-img="img/hockey-1.webp" data-alt="Hockey"><span class="mono">hockey-1</span></div>
+    <div class="ph ph--sq" data-img="img/hockey-2.webp" data-alt="Hockey"><span class="mono">hockey-2</span></div>
+  </div>
+  <p class="mono muted">Paintings / Triglinki exhibition / hockey</p>
+</section>
+
+</main>
+
+<!-- ============ CONTACT ============ -->
+<footer class="sec contact" id="contact">
+  <p class="lead">I could not save every business.<br>But I helped one person reopen his door to the world —<br>and discovered the work I want to do.</p>
+  <h2 class="giant">Let's talk</h2>
+  <div class="mono contact__row">
+    <a href="mailto:alena@kupris.net" data-cursor="open">alena@kupris.net</a>
+    <a href="https://linkedin.com/in/alena-kupris" target="_blank" rel="noopener" data-cursor="open">LinkedIn ↗</a>
+    <span>Moscow, Russia</span>
+    <span>EN / RU / FR</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
