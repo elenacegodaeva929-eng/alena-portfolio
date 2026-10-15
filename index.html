@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Alena Kupris — Marketing, Design, Research</title>
-  <meta name="description" content="Alena Kupris makes people and their ideas visible through marketing, design, and research.">
+  <meta name="description" content="Alena Kupris: marketing, design, and research. I make people and their ideas visible.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
 
-<!-- ============ HERO ============ -->
+<!-- =================== HERO =================== -->
 <header class="hero" id="hero">
   <div class="crowd crowd--back" id="crowdBack" aria-hidden="true"></div>
   <div class="crowd crowd--front" id="crowdFront" aria-hidden="true"></div>
@@ -23,200 +23,267 @@
     <span>Alena Kupris</span>
     <span class="hide-sm">Marketing / Design / Research</span>
     <span class="hide-sm" id="clock">Moscow --:--</span>
-    <a href="#contact" data-cursor="open">Contact ↗</a>
+    <a href="#contact">Contact ↗</a>
   </nav>
 
-  <h1 class="hero__title">
-    I make people<br>and their ideas<br>
-    <span class="circled">visible<svg viewBox="0 0 300 90" preserveAspectRatio="none" aria-hidden="true"><path class="draw" d="M20 50 C30 10,240 0,285 30 C305 55,250 85,140 82 C40 80,5 65,25 35"/></svg></span>
-  </h1>
+  <p class="hero__hint mono" id="heroHint">Hover over the crowd: five of these ideas are mine</p>
 
-  <div class="hero__hint">
-    <p class="hand">move your cursor —<br>find someone</p>
-    <p class="mono">(scroll ↓)</p>
+  <div class="hero__content" id="heroContent">
+    <h1 class="hero__name">Alena Kupris</h1>
+    <p class="hero__claim">Marketing, design, and research. I make people and their ideas
+      <span class="circled">visible<svg viewBox="0 0 300 90" preserveAspectRatio="none" aria-hidden="true"><path class="draw" d="M20 50 C30 10,240 0,285 30 C305 55,250 85,140 82 C40 80,5 65,25 35"/></svg></span>.</p>
+    <ul class="proof">
+      <li><b>5,500+</b><span>users of my non-profit city map in 1.5 months</span></li>
+      <li><b>750K</b><span>views of the series I designed for</span></li>
+      <li><b>9</b><span>complex B2B projects delivered</span></li>
+    </ul>
   </div>
 </header>
 
 <main>
 
-<!-- ============ ABOUT ============ -->
-<section class="sec about">
+<!-- =================== ABOUT =================== -->
+<section class="sec about" id="about">
+  <div class="media media--portrait" data-src="img/portrait"><span class="mono">portrait</span></div>
   <div>
-    <p class="mono label">(01) About</p>
-    <div class="ph ph--portrait" data-img="img/portrait.webp" data-alt="Alena Kupris"><span class="mono">portrait.webp</span></div>
-  </div>
-  <div>
-    <p class="lead">I know how many talented people with meaningful work <span class="muted">disappear</span> among corporations and monopolies. I want my work to make people and their ideas <mark>visible</mark>.</p>
+    <p class="mono label">About</p>
+    <p class="lead">I know how many talented people with meaningful work can <span class="muted">disappear</span> among corporations and monopolies. I want my work to make people and their ideas <mark>visible</mark>.</p>
     <p class="body">Through design, marketing, or research, I want to help people connect with others who value what they create.</p>
     <div class="stats">
       <div><p class="num">3</p><p class="mono">years in design and marketing</p></div>
-      <div><p class="num">9</p><p class="mono">B2B projects delivered</p></div>
+      <div><p class="num">9</p><p class="mono">complex B2B projects delivered</p></div>
       <div><p class="num">30+</p><p class="mono">freelance projects</p></div>
-      <div class="stat-circled">
-        <p class="num">5.5K</p>
-        <svg viewBox="0 0 120 60" aria-hidden="true"><ellipse cx="58" cy="30" rx="54" ry="24" transform="rotate(-4 58 30)"/></svg>
-        <p class="mono">users of her own product</p>
-        <p class="hand small">started this alone</p>
-      </div>
+      <div><p class="num"><span class="ring">5,500+<svg viewBox="0 0 120 60" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="60" cy="30" rx="56" ry="25" transform="rotate(-3 60 30)"/></svg></span></p><p class="mono">users of my non-profit project</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============ PARKOVKIN ============ -->
-<section class="sec dark park">
-  <div class="mono meta"><span>(02) Key project</span><span>Founder and CEO — Dec 2025 → now</span></div>
-  <svg class="map" viewBox="0 0 680 220" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0 120 C120 90,200 150,330 110 S540 70,680 130" class="river"/>
-    <path d="M0 60 L680 180 M120 0 L260 220 M420 0 L380 220 M560 0 L620 220 M0 170 L680 40" class="street"/>
-    <circle cx="240" cy="96" r="5"/><circle cx="352" cy="118" r="5"/><circle cx="470" cy="84" r="5"/><circle cx="300" cy="160" r="5"/><circle cx="560" cy="140" r="5"/>
-  </svg>
-  <h2 class="giant">Parkovkin</h2>
-  <div class="steps">
-    <div><p class="mono accent">Problem</p><p>Free legal parking in central St. Petersburg existed, but nobody could find it.</p></div>
-    <div><p class="mono accent">Product</p><p>A free interactive map, built, launched, and run by one person.</p></div>
-    <div><p class="mono accent">Launch</p><p>Pitched to urban media and featured in print and online.</p></div>
+<!-- =================== PARKOVKIN =================== -->
+<section class="sec dark" id="parkovkin">
+  <div class="meta mono"><span>Key project / non-profit</span><span>Founder and CEO, marketing manager / Dec 2025 – present</span></div>
+  <h2 class="giant giant--bleed">Parkovkin</h2>
+  <div class="cols3">
+    <div><p class="mono accent">The problem</p><p>Legal free parking in central St. Petersburg existed, but drivers had no simple way to find it.</p></div>
+    <div><p class="mono accent">What I did</p><p>Founded and launched a free interactive website mapping legal free parking spaces, then pitched the project to urban media.</p></div>
+    <div><p class="mono accent">The result</p><p>5,500+ unique users within 1.5 months. Featured in the print edition of Metro St. Petersburg and profiled by MR-7.</p></div>
   </div>
 </section>
 
-<section class="sec park-detail">
-  <div>
-    <div class="browser">
-      <div class="browser__bar"><i></i><i></i><span class="mono">parkovkinspb.ru</span></div>
-      <div class="ph ph--wide" data-img="img/parkovkin-site.webp" data-alt="Parkovkin website"><span class="mono">parkovkin-site.webp</span></div>
-    </div>
-    <div class="clips">
-      <div class="clip clip--l">
-        <p class="mono">Metro St. Petersburg</p><p class="clip__title">Print edition feature</p>
-        <div class="ph ph--clip" data-img="img/metro.webp" data-alt="Metro St. Petersburg article"><span class="mono">metro.webp</span></div>
-        <svg class="pin" viewBox="0 0 30 30" aria-hidden="true"><path d="M4 4 L26 26 M26 4 L4 26"/></svg>
-      </div>
-      <div class="clip clip--r">
-        <p class="mono">MR-7</p><p class="clip__title">Project and founder story</p>
-        <div class="ph ph--clip" data-img="img/mr7.webp" data-alt="MR-7 article"><span class="mono">mr7.webp</span></div>
-        <svg class="pin pin--l" viewBox="0 0 30 30" aria-hidden="true"><path d="M4 4 L26 26 M26 4 L4 26"/></svg>
+<section class="sec park">
+  <div class="park__main">
+    <div class="media media--wide media--framed" data-src="img/parkovkin-site"><span class="mono">parkovkin-site</span></div>
+    <div class="park__stats">
+      <div><p class="num num--xl">5,500+</p><p class="mono">unique users in 1.5 months</p></div>
+      <div><p class="num num--xl"><mark>700K+</mark></p><p class="mono">combined media coverage views</p></div>
+      <div><p class="num num--xl">2</p><p class="mono">media features: Metro St. Petersburg (print), MR-7</p></div>
+      <div class="btns">
+        <a class="pill mono" href="https://parkovkinspb.ru/" target="_blank" rel="noopener">Open the map ↗</a>
+        <a class="pill mono" href="https://mr-7.ru/articles/2026/09/01/peterburzhenka-sozdala-kartu-s-besplatnymi-stoiankami-v-tsentre-nekotorye-okazalis-vo-dvorakh-zhilykh-domov-news" target="_blank" rel="noopener">Read the MR-7 story ↗</a>
       </div>
     </div>
-    <p class="hand">print edition!</p>
   </div>
-  <div class="park-stats">
-    <div><p class="num num--xl">5,500+</p><p class="mono">unique users in 1.5 months</p></div>
-    <!-- TODO: сверить охват со скриншотами MR-7 -->
-    <div><p class="num num--xl"><mark>700K+</mark></p><p class="mono">media reach</p></div>
-    <div><p class="num num--xl">2</p><p class="mono">media features, zero ad budget</p></div>
-    <a class="pill mono" href="https://parkovkinspb.ru" target="_blank" rel="noopener" data-cursor="open">Visit Parkovkin ↗</a>
+  <div class="row4">
+    <figure><div class="media media--sq" data-src="img/parkovkin-map"><span class="mono">parkovkin-map</span></div><figcaption class="mono">Map screens</figcaption></figure>
+    <figure><div class="media media--sq" data-src="img/parkovkin-analytics"><span class="mono">parkovkin-analytics</span></div><figcaption class="mono">Analytics</figcaption></figure>
+    <figure><div class="media media--sq" data-src="img/parkovkin-field"><span class="mono">parkovkin-field</span></div><figcaption class="mono">Field checks of every spot</figcaption></figure>
+    <figure><div class="media media--sq" data-src="img/metro"><span class="mono">metro</span></div><figcaption class="mono">Metro St. Petersburg, print edition</figcaption></figure>
   </div>
 </section>
 
-<!-- ============ VIBRATE HIGHER ============ -->
-<section class="sec vibe">
-  <div class="mono meta"><span>(03) Key project</span><span>Freelance — film and TV</span></div>
-  <div class="vibe__grid">
-    <div class="vibe__art">
-      <div class="ph ph--dark" data-img="img/vibrate-higher.webp" data-alt="Vibrate Higher key art"><span class="mono">vibrate-higher.webp</span></div>
-      <h2 class="giant giant--md">Vibrate<br>higher</h2>
-    </div>
+<!-- =================== VIBRATE HIGHER =================== -->
+<section class="sec bordered" id="vibrate">
+  <div class="meta mono"><span>Key project / freelance</span><span>UX/UI design for the series</span></div>
+  <div class="vibe">
     <div>
+      <h2 class="giant giant--md">Vibrate<br>Higher</h2>
       <p class="num num--xl">750K</p><p class="mono">views in 3 months</p>
-      <p class="body">Visual design for the series. Partners: VK, Internet Development Institute, Wink.</p>
+      <p class="body">Design for the series "Vibrate Higher" in collaboration with VK, Internet Development Institute, and Wink.</p>
+      <div class="btns">
+        <a class="pill mono" href="https://wink.ru/movies/vibriruy-vyshe-year-2025" target="_blank" rel="noopener">Watch on Wink ↗</a>
+        <a class="pill mono" href="https://vkvideo.ru/video-195528184_456244088" target="_blank" rel="noopener">Watch on VK ↗</a>
+        <a class="pill mono" href="https://www.behance.net/gallery/236984987/UXUI-design-for-the-series-seriala-vibriruj-vyshe" target="_blank" rel="noopener">Case on Behance ↗</a>
+      </div>
+    </div>
+    <div class="vibe__wins">
+      <div class="media media--video win-a" data-src="img/vibe-1"><span class="mono">vibe-1 (gif / mp4)</span></div>
+      <div class="media media--video" data-src="img/vibe-2"><span class="mono">vibe-2</span></div>
+      <div class="media media--video" data-src="img/vibe-3"><span class="mono">vibe-3</span></div>
+      <div class="media media--video win-d" data-src="img/vibe-4"><span class="mono">vibe-4</span></div>
     </div>
   </div>
 </section>
 
-<!-- ============ EXPERIENCE ============ -->
-<section class="sec dark">
-  <p class="mono label">(04) Experience</p>
+<!-- =================== EXPERIENCE =================== -->
+<section class="sec dark" id="experience">
+  <p class="mono label muted">Experience</p>
   <h2 class="giant giant--md">3 years.<br><span class="accent">Real teams.</span></h2>
   <div class="jobs">
     <article class="job">
-      <p class="mono muted">2025 — 2026</p>
-      <div><h3>GetBizMe</h3><p class="mono muted">Lead designer / marketing manager</p></div>
-      <p>Led 5 designers, shipped <span class="accent">9 B2B projects</span>, ran 2 products from research to launch. 20+ user interviews.</p>
+      <p class="mono muted">Mar 2025 – Apr 2026</p>
+      <div><h3>GetBizMe</h3><p class="mono muted">Product and lead designer / marketing manager</p></div>
+      <p>Led a team of 5 designers. Delivered <span class="accent">9 complex B2B projects</span> with cross-functional teams. Managed 2 products as product manager and lead designer, from user research to launch. Conducted 20+ user interviews, launched corporate LinkedIn channels, and ran market research.</p>
     </article>
     <article class="job">
-      <p class="mono muted">2023 — 2026</p>
-      <div><h3>Devim Team</h3><p class="mono muted">UX/UI designer and SMM</p></div>
-      <p>$12K platform launch, 15+ A/B tests, <span class="accent">+40%</span> organic followers, <span class="accent">+35%</span> event attendance from HR merch.</p>
+      <p class="mono muted">Apr 2023 – Jan 2026</p>
+      <div><h3>Devim Team</h3><p class="mono muted">UX/UI designer and SMM / graphic designer and SMM</p></div>
+      <p>Built the main platform for investors and job seekers on Tilda with a $12K budget. 15+ A/B tests cut the user journey by 3 steps. <span class="accent">+40%</span> organic followers on LinkedIn and Instagram, <span class="accent">+35%</span> corporate event attendance, <span class="accent">+45%</span> dwell time on articles, <span class="accent">+60%</span> social reach.</p>
     </article>
     <article class="job">
-      <p class="mono muted">2023 — 2026</p>
-      <div><h3>Freelance</h3><p class="mono muted">Graphic, web, marketing</p></div>
-      <p>30+ projects: branding, SMM, websites, print.</p>
+      <p class="mono muted">May 2023 – Jan 2026</p>
+      <div><h3>Freelance</h3><p class="mono muted">Graphic and web designer, marketing manager</p></div>
+      <p>30+ projects: branding, social media design, complete websites, and print, including design for film and television.</p>
     </article>
     <article class="job">
-      <p class="mono muted">2023 — 2024</p>
+      <p class="mono muted">Mar 2023 – Mar 2024</p>
       <div><h3>Amigo Print</h3><p class="mono muted">Graphic designer</p></div>
-      <p>Pre-press, brochures, calendars, presentations.</p>
+      <p>Pre-press layout, presentations, brochures, flyers, calendars, and business cards.</p>
     </article>
   </div>
-  <div class="gallery4">
-    <div class="ph ph--dark ph--sq" data-img="img/devim-1.webp" data-alt="Devim merch"><span class="mono">devim-1.webp</span></div>
-    <div class="ph ph--dark ph--sq tilt-l" data-img="img/devim-2.webp" data-alt="Devim calendar"><span class="mono">devim-2.webp</span></div>
-    <div class="ph ph--dark ph--sq" data-img="img/devim-3.webp" data-alt="Devim stickers"><span class="mono">devim-3.webp</span></div>
-    <div class="ph ph--dark ph--sq" data-img="img/devim-4.webp" data-alt="Devim event"><span class="mono">devim-4.webp</span></div>
+
+  <div class="work-feature">
+    <div class="media media--wide" data-src="img/brief-builder"><span class="mono">brief-builder</span></div>
+    <div>
+      <p class="mono muted">UX/UI / website</p>
+      <h3 class="h3">Brief Builder</h3>
+      <p class="body">UX/UI design of the Brief Builder website.</p>
+      <div class="btns"><a class="pill pill--light mono" href="https://www.behance.net/gallery/240061903/UXUI-Brief-Builder-Website" target="_blank" rel="noopener">Case on Behance ↗</a></div>
+    </div>
   </div>
-  <p class="mono muted">Devim HR: merch / calendars / stickers / events</p>
+
+  <div class="row4">
+    <figure><div class="media media--sq" data-src="img/devim-1"><span class="mono">devim-1</span></div><figcaption class="mono muted">Devim: merch</figcaption></figure>
+    <figure><div class="media media--sq" data-src="img/devim-2"><span class="mono">devim-2</span></div><figcaption class="mono muted">Devim: calendars</figcaption></figure>
+    <figure><div class="media media--sq" data-src="img/devim-3"><span class="mono">devim-3</span></div><figcaption class="mono muted">Devim: stickers</figcaption></figure>
+    <figure><div class="media media--sq" data-src="img/devim-4"><span class="mono">devim-4</span></div><figcaption class="mono muted">Devim: illustrations</figcaption></figure>
+  </div>
 </section>
 
-<!-- ============ SOCIAL IMPACT ============ -->
-<section class="sec">
-  <p class="mono label">(05) Social impact</p>
-  <div class="two">
+<!-- =================== MORE WORK =================== -->
+<section class="sec" id="work">
+  <p class="mono label">More work</p>
+  <h2 class="giant giant--md">Selected<br>projects</h2>
+  <div class="grid-work">
+    <article class="w w--big"><div class="media media--wide" data-src="img/aip-studios"><span class="mono">aip-studios</span></div><h3>AIP Studios</h3><p class="mono">Web design</p></article>
+    <article class="w"><div class="media media--tall" data-src="img/zio"><span class="mono">zio</span></div><h3>ZIO.me</h3><p class="mono">Platform UI / freelance</p></article>
+    <article class="w"><div class="media media--tall" data-src="img/career-page"><span class="mono">career-page</span></div><h3>Career guidance page</h3><p class="mono">Landing page for Petrovsky State College</p></article>
+    <article class="w w--big"><div class="media media--wide" data-src="img/tur-de-friends"><span class="mono">tur-de-friends</span></div><h3>Tur de Friends</h3><p class="mono">Design project</p></article>
+    <article class="w"><div class="media media--sq" data-src="img/print"><span class="mono">print</span></div><h3>Print collateral</h3><p class="mono">Test assignment for Yandex</p></article>
+    <article class="w"><div class="media media--sq" data-src="img/zabyli-sakhar"><span class="mono">zabyli-sakhar</span></div><h3>Zabyli Sakhar</h3><p class="mono">Eco-toy packaging concept</p></article>
+    <article class="w"><div class="media media--sq" data-src="img/yanissaari"><span class="mono">yanissaari</span></div><h3>Yanissaari</h3><p class="mono">Packaging concept</p></article>
+  </div>
+</section>
+
+<!-- =================== SOCIAL IMPACT =================== -->
+<section class="sec bordered" id="impact">
+  <p class="mono label">Social impact</p>
+  <div class="impact">
     <article>
-      <div class="ph ph--wide" data-img="img/silence-of-nature.webp" data-alt="Silence of Nature event"><span class="mono">silence-of-nature.webp</span></div>
+      <div class="media media--wide" data-src="img/silence-of-nature"><span class="mono">silence-of-nature</span></div>
+      <p class="mono">Co-founder and partnerships lead / Jan – May 2026</p>
       <h3 class="h3">Silence of Nature</h3>
-      <p class="mono">Co-founder, partnerships</p>
-      <p class="body">7-person team, <mark>110K+</mark> organic reach, 5 events with Sevkabel Port, New Holland, and Bushe.</p>
+      <p class="body">A bilingual eco-art project. Led a 7-person cross-functional team and raised $500+ in crowdfunding for sustainability initiatives. Built partnerships with Sevkabel Port, New Holland, and Bushe: <mark>110K+</mark> organic reach and 5 community events in 3 months.</p>
+      <div class="btns">
+        <a class="pill mono" href="https://silenceofnature.tilda.ws/eng" target="_blank" rel="noopener">Website (EN) ↗</a>
+        <a class="pill mono" href="https://silenceofnature.tilda.ws/" target="_blank" rel="noopener">Website (RU) ↗</a>
+      </div>
     </article>
     <article>
-      <div class="ph ph--wide" data-img="img/nochlezhka.webp" data-alt="Nochlezhka design work"><span class="mono">nochlezhka.webp</span></div>
+      <div class="media media--wide" data-src="img/nochlezhka"><span class="mono">nochlezhka</span></div>
+      <p class="mono">Graphic and web designer, SMM / Sep 2025 – present</p>
       <h3 class="h3">Nochlezhka</h3>
-      <p class="mono">Designer for volunteer projects</p>
-      <p class="body">15+ print and presentation projects, 20+ social graphics for Russia's largest homelessness charity.</p>
+      <p class="body">Russia's largest homelessness charity. 15+ design projects, including presentations, flyers, and event posters, plus 20+ social media graphics for events and charity news.</p>
+    </article>
+  </div>
+  <div class="row3">
+    <figure><div class="media media--sq" data-src="img/silence-event"><span class="mono">silence-event</span></div><figcaption class="mono">Silence of Nature: children's performance</figcaption></figure>
+    <figure><div class="media media--sq" data-src="img/triglinki"><span class="mono">triglinki</span></div><figcaption class="mono">Triglinki exhibition</figcaption></figure>
+    <figure><div class="media media--sq" data-src="img/hockey"><span class="mono">hockey</span></div><figcaption class="mono">Hockey</figcaption></figure>
+  </div>
+</section>
+
+<!-- =================== RESEARCH =================== -->
+<section class="sec dark" id="research">
+  <p class="mono label muted">Research and publications</p>
+  <div class="research">
+    <article class="r">
+      <p class="mono muted">2025 – 2026</p>
+      <div><h3>MAYOU</h3><p class="mono muted">Co-author</p></div>
+      <p>A socio-artistic study of female upbringing environments based on interviews with 25+ participants. Published in 50 copies across 10 locations in St. Petersburg and Moscow; exhibited at the Erarta Museum of Contemporary Art, featured at Podpisnie Izdaniya bookstore, and shown at IRNBY space.</p>
+    </article>
+    <article class="r">
+      <p class="mono accent">2026 / in progress</p>
+      <div><h3>Brand message semantics</h3><p class="mono muted">Co-author</p></div>
+      <p>"Finding Alignment Between Brand Message Semantics and Consumer Query Semantics: Emerging Technologies and Prospects for Brand Management." A paper with an associate professor of marketing at Lomonosov Moscow State University.</p>
+    </article>
+    <article class="r">
+      <p class="mono muted">2022 – 2023</p>
+      <div><h3>3 Women of the Louvre</h3><p class="mono muted">Independent researcher</p></div>
+      <p>Describing art in French. Presented at the Library of Foreign Literature and the Institut Français, Moscow.</p>
     </article>
   </div>
 </section>
 
-<!-- ============ RESEARCH ============ -->
-<section class="sec two bordered">
-  <div><p class="mono label">(06) Research</p><h3 class="h3">MAYOU</h3><p class="body">Socio-artistic study, 25+ interviews. Exhibited at Erarta Museum of Contemporary Art.</p></div>
-  <div><p class="mono label accent">In progress</p><p class="lead lead--sm">Brand message semantics vs consumer query semantics. Co-authored with an associate professor of marketing, MSU.</p></div>
-</section>
-
-<!-- ============ TEACHING ============ -->
-<section class="sec bordered">
-  <p class="mono label">(07) Teaching design</p>
+<!-- =================== TEACHING =================== -->
+<section class="sec" id="teaching">
+  <p class="mono label">Teaching design</p>
   <div class="teach">
-    <div><p class="num">11</p><p class="mono">1:1 students</p></div>
-    <div><p class="num">100%</p><p class="mono">continued in design</p></div>
-    <div><p class="num">2</p><p class="mono">launched startups</p></div>
-    <p class="hand">one got a Yandex billboard ↗</p>
+    <div>
+      <h3 class="h3">Design instructor and mentor</h3>
+      <p class="mono">Independent / Jan 2024 – May 2025</p>
+      <div class="stats stats--3">
+        <div><p class="num">11</p><p class="mono">students ages 17–25, 1:1</p></div>
+        <div><p class="num">100%</p><p class="mono">career continuation</p></div>
+        <div><p class="num">20+</p><p class="mono">real-world projects</p></div>
+      </div>
+      <p class="body">Built custom learning plans in Figma, Illustrator, Photoshop, and web design. 2 students launched education startups and 5 moved into freelance work. One student's work was placed in a <mark>Yandex advertisement in central Moscow</mark>.</p>
+    </div>
+    <div class="teach__side">
+      <div class="media media--wide" data-src="img/student-yandex"><span class="mono">student-yandex</span></div>
+      <p class="mono">Student work in a Yandex advertisement, Moscow</p>
+      <div class="coddy">
+        <h3 class="h3">Coddy</h3>
+        <p class="mono">Design instructor / Nov 2025 – May 2026</p>
+        <p class="body">Taught 15 students ages 9–13 in 3 groups: Figma, illustrations, posters, and digital stickers through hands-on projects.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ============ BEYOND WORK ============ -->
-<section class="sec bordered beyond">
-  <p class="mono label muted">(08) Beyond work</p>
-  <div class="gallery5">
-    <div class="ph ph--sq" data-img="img/art-1.webp" data-alt="Painting"><span class="mono">art-1</span></div>
-    <div class="ph ph--sq tilt-r" data-img="img/art-2.webp" data-alt="Painting"><span class="mono">art-2</span></div>
-    <div class="ph ph--sq" data-img="img/triglinki.webp" data-alt="Triglinki exhibition"><span class="mono">triglinki</span></div>
-    <div class="ph ph--sq tilt-l" data-img="img/hockey-1.webp" data-alt="Hockey"><span class="mono">hockey-1</span></div>
-    <div class="ph ph--sq" data-img="img/hockey-2.webp" data-alt="Hockey"><span class="mono">hockey-2</span></div>
+<!-- =================== RECOGNITION =================== -->
+<section class="sec bordered" id="recognition">
+  <p class="mono label">Recognition</p>
+  <ul class="awards">
+    <li><span>Prize-winner, Young Design x Tatneft</span><span class="mono">design concepts adopted for internal use by Tatneft</span></li>
+    <li><span>Winner, "Prosto-Naprosto" National Infographics Competition</span><span class="mono">national competition</span></li>
+    <li><span>Winner, International "Russia's Talent" Art Competition</span><span class="mono">exhibited at Art-Kommuna, Moscow</span></li>
+    <li><span>3rd-degree laureate, Deineka Youth Forum on Composition</span><span></span></li>
+    <li><span>Finalist, Mosproducer and Media Hub Art Competition</span><span></span></li>
+    <li><span>Semifinalist, Young Design and Art Masters competitions</span><span></span></li>
+  </ul>
+</section>
+
+<!-- =================== BEYOND WORK =================== -->
+<section class="sec bordered" id="beyond">
+  <p class="mono label">Beyond work</p>
+  <div class="row3">
+    <div class="media media--sq" data-src="img/tattoo-1"><span class="mono">tattoo-1</span></div>
+    <div class="media media--sq" data-src="img/tattoo-2"><span class="mono">tattoo-2</span></div>
+    <div class="media media--sq" data-src="img/tattoo-3"><span class="mono">tattoo-3</span></div>
   </div>
-  <p class="mono muted">Paintings / Triglinki exhibition / hockey</p>
+  <p class="mono">Tattoo design</p>
 </section>
 
 </main>
 
-<!-- ============ CONTACT ============ -->
+<!-- =================== CONTACT =================== -->
 <footer class="sec contact" id="contact">
-  <p class="lead">I could not save every business.<br>But I helped one person reopen his door to the world —<br>and discovered the work I want to do.</p>
+  <p class="lead">I could not save every business. But I helped one person reopen his door to the world — and discovered the work I want to do.</p>
   <h2 class="giant">Let's talk</h2>
-  <div class="mono contact__row">
-    <a href="mailto:alena@kupris.net" data-cursor="open">alena@kupris.net</a>
-    <a href="https://linkedin.com/in/alena-kupris" target="_blank" rel="noopener" data-cursor="open">LinkedIn ↗</a>
+  <div class="contact__row mono">
+    <a href="mailto:alena@kupris.net">alena@kupris.net</a>
+    <a href="https://linkedin.com/in/alena-kupris" target="_blank" rel="noopener">LinkedIn ↗</a>
     <span>Moscow, Russia</span>
-    <span>EN / RU / FR</span>
+    <span>Russian / English / French</span>
   </div>
 </footer>
 
