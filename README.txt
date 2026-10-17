@@ -1,44 +1,50 @@
 Кладите сюда файлы с ТОЧНО такими именами. Расширение любое:
 .webp .jpg .png .gif (фото и гифки) или .mp4 (записи экрана).
 Сайт сам найдёт файл и подставит его вместо заштрихованной заглушки.
-Фото лучше сжимать до 300–500 КБ (squoosh.app), видео до 3–5 МБ.
+Фото сжимать до 300–500 КБ (squoosh.app), видео до 3–5 МБ.
+Резюме положить в КОРЕНЬ сайта (рядом с index.html) под именем cv.pdf.
 
-О СЕБЕ
-portrait                  портрет Алены, вертикальный 3:4
+ГЛАВНАЯ
+portrait              портрет, вертикальный 3:4
 
-PARKOVKIN
-parkovkin-site            главный скрин сайта, горизонтальный 16:10
-parkovkin-map             экран карты (квадрат)
-parkovkin-analytics       скрин аналитики (квадрат)
-parkovkin-field           фото «полевых» объездов (квадрат)
-metro                     скан газеты «Метро» (квадрат)
+PARKOVKIN (главная + страница кейса)
+parkovkin-site        главный скрин сайта, 16:10
+parkovkin-map         экраны карты, 16:10
+parkovkin-field       фото «полевых» объездов, 16:10
+parkovkin-analytics   скрин аналитики, 16:10
+metro                 скан газеты «Метро», вертикальный
+mr7                   скрин статьи MR-7, вертикальный
 
-ВИБРИРУЙ ВЫШЕ (гифки или mp4, горизонтальные 16:9)
-vibe-1                    самый эффектный экран, он крупный
-vibe-2, vibe-3, vibe-4
+ВИБРИРУЙ ВЫШЕ (гифки/mp4, 16:9)
+vibe-1                самый эффектный экран (крупный)
+vibe-2 … vibe-5
 
-ОПЫТ
-brief-builder             обложка Brief Builder 16:10
-devim-1 … devim-4         только то, что точно делала Алена (квадрат)
+GETBIZME
+brief-builder         обложка, 16:10
+aip-studios           скрин сайта, 16:10
 
-ДРУГИЕ ПРОЕКТЫ
-aip-studios               16:10
-zio                       вертикальный
-career-page               профориентатор, вертикальный
-tur-de-friends            16:10
-print                     печатная продукция (мокапы), квадрат
-zabyli-sakhar             упаковка эко-игрушки, квадрат
-yanissaari                квадрат
+DEVIM (квадрат, только то, что точно делала Алена)
+devim-merch, devim-calendar, devim-stickers,
+devim-events, devim-telegram, devim-illustrations
+devim-platform        скрин платформы на Тильде, 16:10
 
-ВОЛОНТЁРСТВО
-silence-of-nature         16:10
-nochlezhka                16:10
-silence-event             выступление девочек, квадрат
-triglinki                 выставка «Триглинки», квадрат
-hockey                    квадрат
+FREELANCE (квадрат)
+zio, career-page, tur-de-friends, yanissaari, zabyli-sakhar, print
+
+AMIGO PRINT (16:10)
+amigo-1, amigo-2
+
+TATNEFT
+tatneft               концепт с конкурса, 16:10
 
 ПРЕПОДАВАНИЕ
-student-yandex            работа ученицы в рекламе Яндекса, 16:10
+student-yandex        работа ученицы в рекламе Яндекса, 16:10
+student-1, student-2  квадрат
 
-ВНЕ РАБОТЫ
-tattoo-1, tattoo-2, tattoo-3   квадрат
+ВОЛОНТЁРСТВО
+silence-kids          выступление детей, вертикальный 4:5
+nochlezhka-1 … 3      квадрат
+triglinki             Алена рядом со своими картинами, 16:10
+
+ВНЕ РАБОТЫ (квадрат)
+art-1 … art-4, hockey

@@ -15,7 +15,7 @@
     'a language exchange club','a zero-waste blog','a local history archive','a bike co-op',
     'a sustainable fashion label','an independent radio','an after-school tutor','a community fridge'
   ];
-  var highlights = ['Parkovkin','Vibrate Higher','Silence of Nature','Nochlezhka','MAYOU'];
+  var highlights = ['Parkovkin','Vibrate Higher','Brief Builder','Silence of Nature','Nochlezhka'];
 
   var hero = document.getElementById('hero');
   var back = document.getElementById('crowdBack');
