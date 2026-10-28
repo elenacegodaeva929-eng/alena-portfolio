@@ -26,7 +26,6 @@ aip-studios           скрин сайта, 16:10
 DEVIM (квадрат, только то, что точно делала Алена)
 devim-merch, devim-calendar, devim-stickers,
 devim-events, devim-telegram, devim-illustrations
-devim-platform        скрин платформы на Тильде, 16:10
 
 FREELANCE (квадрат)
 zio, career-page, tur-de-friends, yanissaari, zabyli-sakhar, print
@@ -43,7 +42,6 @@ student-1, student-2  квадрат
 
 ВОЛОНТЁРСТВО
 silence-kids          выступление детей, вертикальный 4:5
-nochlezhka-1 … 3      квадрат
 triglinki             Алена рядом со своими картинами, 16:10
 
 ВНЕ РАБОТЫ (квадрат)
