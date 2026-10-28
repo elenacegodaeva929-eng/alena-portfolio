@@ -15,7 +15,7 @@
     'a language exchange club','a zero-waste blog','a local history archive','a bike co-op',
     'a sustainable fashion label','an independent radio','an after-school tutor','a community fridge'
   ];
-  var highlights = ['Parkovkin','Vibrate Higher','Brief Builder','Silence of Nature','Nochlezhka'];
+  var highlights = ['Parkovkin','Vibrate Higher','Brief Builder','Silence of Nature','Yanissaari'];
 
   var hero = document.getElementById('hero');
   var back = document.getElementById('crowdBack');
@@ -147,11 +147,16 @@
   var imgExt = ['webp', 'jpg', 'jpeg', 'png', 'gif'];
   var vidExt = ['mp4', 'webm'];
 
+  function hideSlot(box) {
+    var wrap = box.closest('figure, .card') || box;
+    wrap.style.display = 'none';
+  }
+
   function tryVideo(box, base, i) {
-    if (i >= vidExt.length) return;
+    if (i >= vidExt.length) { hideSlot(box); return; }
     var v = document.createElement('video');
     v.muted = true; v.loop = true; v.autoplay = true; v.playsInline = true;
-    v.setAttribute('playsinline', ''); v.preload = 'metadata';
+    v.setAttribute('playsinline', ''); v.preload = 'auto';
     v.onloadeddata = function () { box.appendChild(v); box.classList.add('loaded'); v.play().catch(function () {}); };
     v.onerror = function () { tryVideo(box, base, i + 1); };
     v.src = base + '.' + vidExt[i];
