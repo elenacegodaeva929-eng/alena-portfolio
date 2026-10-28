@@ -4,16 +4,38 @@
   var fine = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ================= NO HANGING SHORT WORDS =================
+     glues short words (a, the, of, into...) to the next word,
+     so they never stay alone at the end of a line */
+  (function () {
+    var re = /(^|[\s(«"“])(a|an|the|and|or|nor|but|of|in|on|at|to|by|for|with|from|into|onto|as|is|are|was|my|our|its|no|via|I)\s+/gi;
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        var p = n.parentNode;
+        if (!p || p.closest('script, style, .crowd, .mono')) return NodeFilter.FILTER_REJECT;
+        return /\S/.test(n.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    var nodes = [], n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(function (t) {
+      var v = t.nodeValue, prev;
+      do { prev = v; v = v.replace(re, '$1$2\u00A0'); } while (v !== prev);
+      t.nodeValue = v;
+    });
+  })();
+
   /* ================= CROWD ================= */
   var phrases = [
-    'a parking map nobody knew about','a charity poster',"a student's first client",'a small studio',
-    'a startup with no name yet','a handmade zine','a neighborhood bakery','a street musician',
-    'an indie film crew','a second-hand bookshop','a poetry open mic','a shelter for cats','a repair café',
-    'a youth coding club','a mural painter','a tiny gallery','a street library','a wildlife rescue',
-    'an open source tool','a community choir','a seed library','a rooftop cinema','a free pantry',
-    'a teenage astronomer','a night bus map','a free store',"a ceramicist's popup",'a podcast about silence',
-    'a language exchange club','a zero-waste blog','a local history archive','a bike co-op',
-    'a sustainable fashion label','an independent radio','an after-school tutor','a community fridge'
+    'parking map nobody knew about','charity posters','first clients','small studios',
+    'startups with no name yet','handmade zines','neighborhood bakery','street musicians',
+    'indie film crew','second-hand bookshop','poetry open mic','cat shelter','repair café',
+    'youth coding club','mural painters','tiny gallery','street library','wildlife rescue',
+    'open-source tools','community choir','seed library','rooftop cinema','free pantry',
+    'teenage astronomer','night bus map',"ceramicist's pop-up",'podcast about silence',
+    'language exchange club','zero-waste blog','local history archive','bike co-op',
+    'sustainable fashion label','independent radio','after-school tutors','community fridge',
+    'family workshop','unsigned bands','first exhibition','app with ten users','self-published book'
   ];
   var highlights = ['Parkovkin','Vibrate Higher','Brief Builder','Silence of Nature','Yanissaari'];
 
@@ -23,7 +45,15 @@
   var content = document.getElementById('heroContent');
   var hint = document.getElementById('heroHint');
 
-  function rand(a) { return a[Math.floor(Math.random() * a.length)]; }
+  var bag = [];
+  function rand(a) {
+    /* shuffled deck: no phrase repeats until all were used */
+    if (!bag.length) {
+      bag = a.slice();
+      for (var i = bag.length - 1; i > 0; i--) { var k = Math.floor(Math.random() * (i + 1)); var t = bag[i]; bag[i] = bag[k]; bag[k] = t; }
+    }
+    return bag.pop();
+  }
 
   function buildCrowd() {
     if (!hero || !back || !front) return;
@@ -37,6 +67,7 @@
         var s = document.createElement('span');
         s.textContent = rand(phrases);
         frag.appendChild(s);
+        frag.appendChild(document.createTextNode(' '));
       }
       back.appendChild(frag);
       guard += 25;
@@ -45,7 +76,7 @@
     /* put highlights only where they are visible: below the hint, above the content block */
     var top = 110;
     var bottom = (content ? content.offsetTop : limit) - 30;
-    var spans = Array.prototype.filter.call(back.children, function (s) {
+    var spans = Array.prototype.filter.call(back.querySelectorAll('span'), function (s) {
       return s.offsetTop > top && s.offsetTop < bottom;
     });
     var picked = [];
@@ -147,13 +178,8 @@
   var imgExt = ['webp', 'jpg', 'jpeg', 'png', 'gif'];
   var vidExt = ['mp4', 'webm'];
 
-  function hideSlot(box) {
-    var wrap = box.closest('figure, .card') || box;
-    wrap.style.display = 'none';
-  }
-
   function tryVideo(box, base, i) {
-    if (i >= vidExt.length) { hideSlot(box); return; }
+    if (i >= vidExt.length) return;
     var v = document.createElement('video');
     v.muted = true; v.loop = true; v.autoplay = true; v.playsInline = true;
     v.setAttribute('playsinline', ''); v.preload = 'auto';
