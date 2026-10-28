@@ -30,8 +30,6 @@ devim-events, devim-telegram, devim-illustrations
 FREELANCE (квадрат)
 zio, career-page, tur-de-friends, yanissaari, zabyli-sakhar, print
 
-AMIGO PRINT (16:10)
-amigo-1, amigo-2
 
 TATNEFT
 tatneft               концепт с конкурса, 16:10
