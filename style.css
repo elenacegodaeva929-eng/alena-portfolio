@@ -331,3 +331,16 @@ figcaption{margin-top:10px}
   .giant{font-size:14.5vw}
   .giant--md,.giant--sm{font-size:12vw}
 }
+
+/* v5: modifiers must win over the base .giant size (bug: they were overridden) */
+.giant--md{font-size:clamp(44px,8vw,128px)}
+.giant--sm{font-size:clamp(36px,6vw,96px)}
+/* headlines inside a column never grow wider than their column */
+.vibe>div:first-child,.vol>div:first-child,.vibe__art{container-type:inline-size;min-width:0}
+@supports (font-size:1cqi){
+  .vibe .giant--md{font-size:clamp(40px,18cqi,128px)}
+  .vol .giant--sm{font-size:clamp(34px,15cqi,96px)}
+}
+@media (max-width:600px){
+  .giant--md,.giant--sm{font-size:12vw}
+}
