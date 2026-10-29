@@ -360,3 +360,57 @@ figcaption{margin-top:10px}
 .media--natural:not(.loaded){aspect-ratio:3/2;padding:10px;display:flex}
 .media--natural img{position:static;width:100%;height:auto;object-fit:initial}
 .trig-a img{object-position:15% 30%}
+
+/* ===================== v7 ===================== */
+/* side padding back to the original: full width on every screen */
+:root{--pad:clamp(20px,4vw,56px)}
+.crowd{padding-left:var(--pad);padding-right:var(--pad)}
+
+/* no stray divider between hero and about */
+.about{border-top:0;padding-top:clamp(32px,4vw,56px)}
+.about-nums>div{border-top:0;padding-top:0}
+.about-nums .num{font-size:clamp(30px,3.2vw,64px)}
+
+/* hand-drawn ring, used sparingly: hero, about, teaching */
+.ring{padding:0 .22em;margin:0 -.22em}
+.ring svg{left:-4%;width:108%}
+
+/* fluid type: grows on large monitors, never below a readable size */
+.mono{font-size:clamp(11px,calc(.2vw + 9px),14px)}
+.body,.facts li,.job>p:last-child,.r>p:last-child,.cols3 p:last-child,.steps p:last-child{font-size:clamp(15px,calc(.45vw + 9px),20px)}
+.proof span{font-size:clamp(13px,calc(.3vw + 9px),17px)}
+.small-list li{font-size:clamp(14px,calc(.35vw + 9px),18px)}
+.card h4,.w h3{font-size:clamp(18px,calc(.5vw + 11px),24px)}
+.case-step .body,.case-facts p:last-child{font-size:clamp(16px,calc(.45vw + 10px),21px)}
+.lead{font-size:clamp(22px,2.4vw,48px)}
+.hero__claim{font-size:clamp(20px,2.2vw,44px)}
+.co__line{font-size:clamp(17px,1.5vw,28px)}
+.proof b{font-size:clamp(28px,3vw,60px)}
+
+/* captions sit close to their image, rows sit far apart */
+.grid3{row-gap:clamp(40px,4vw,64px)}
+.card h4{margin:14px 0 4px}
+
+/* image slider */
+.slider{position:relative}
+.slider__track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.slider__track::-webkit-scrollbar{display:none}
+.slider__track>.media{flex:0 0 100%;scroll-snap-align:start}
+.slider__ui{display:flex;align-items:center;gap:12px;margin-top:12px}
+.slider__btn{background:none;border:1px solid currentColor;color:inherit;border-radius:40px;width:44px;height:34px;font:inherit;font-size:16px;line-height:1}
+.slider__btn:hover{background:var(--paper);color:var(--ink)}
+.card h4 a:hover{color:var(--sig-dark)}
+.about-nums .ring{padding:0 .4em;margin:0 -.4em}
+
+/* v8: slides keep the whole screenshot, on its own background */
+.slider .media.loaded{background:var(--slide-bg,#111)}
+.slider .media img{object-fit:contain}
+/* diplomas */
+.diplomas{margin-top:clamp(40px,5vw,72px)}
+.dip-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2vw,28px)}
+.media--doc{aspect-ratio:3/4;background:#e6e2d8}
+.media--doc.loaded{background:#e6e2d8}
+.media--doc img{object-fit:contain;padding:8px}
+.dip-grid a{display:block;transition:transform .25s}
+.dip-grid a:hover{transform:translateY(-4px)}
+@media (max-width:900px){.dip-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}

@@ -1,6 +1,10 @@
 (function () {
   'use strict';
 
+  /* after a reload, always start from the first screen (links with #section still work) */
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (!location.hash) window.scrollTo(0, 0);
+
   var fine = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -198,15 +202,39 @@
     img.src = base + '.' + imgExt[i];
   }
 
-  var slots = document.querySelectorAll('.media[data-src]');
+  function loadSlot(s) { tryImage(s, s.getAttribute('data-src'), 0); }
+  var slots = Array.prototype.filter.call(document.querySelectorAll('.media[data-src]'), function (s) { return !s.closest('.slider'); });
+  var sliders = document.querySelectorAll('.slider');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
-        if (en.isIntersecting) { io.unobserve(en.target); tryImage(en.target, en.target.getAttribute('data-src'), 0); }
+        if (!en.isIntersecting) return;
+        io.unobserve(en.target);
+        if (en.target.classList.contains('slider')) en.target.querySelectorAll('.media[data-src]').forEach(loadSlot);
+        else loadSlot(en.target);
       });
     }, { rootMargin: '400px' });
     slots.forEach(function (s) { io.observe(s); });
+    sliders.forEach(function (s) { io.observe(s); });
   } else {
-    slots.forEach(function (s) { tryImage(s, s.getAttribute('data-src'), 0); });
+    slots.forEach(loadSlot);
+    sliders.forEach(function (s) { s.querySelectorAll('.media[data-src]').forEach(loadSlot); });
   }
+
+  /* ================= SLIDERS ================= */
+  sliders.forEach(function (sl) {
+    var track = sl.querySelector('.slider__track');
+    var count = sl.querySelector('.slider__count');
+    var total = track.children.length;
+    function current() { return Math.round(track.scrollLeft / track.clientWidth); }
+    function update() { count.textContent = (current() + 1) + ' / ' + total; }
+    sl.querySelectorAll('.slider__btn').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var dir = parseInt(b.getAttribute('data-dir'), 10);
+        var next = (current() + dir + total) % total;
+        track.scrollTo({ left: next * track.clientWidth, behavior: reduced ? 'auto' : 'smooth' });
+      });
+    });
+    var t; track.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(update, 60); }, { passive: true });
+  });
 })();
