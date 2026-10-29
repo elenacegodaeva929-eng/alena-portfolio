@@ -22,17 +22,15 @@ vibe-2 … vibe-5
 GETBIZME
 brief-builder         обложка, 16:10
 aip-studios           скрин сайта, 16:10
+brief-builder-2, brief-builder-3, aip-studios-2, aip-studios-3   доп. слайды, 16:10
 
 DEVIM (квадрат, только то, что точно делала Алена)
 devim-merch, devim-calendar, devim-stickers,
 devim-events, devim-telegram, devim-illustrations
-devim-platform        скрин платформы на Тильде, 16:10
 
 FREELANCE (квадрат)
 zio, career-page, tur-de-friends, yanissaari, zabyli-sakhar, print
 
-AMIGO PRINT (16:10)
-amigo-1, amigo-2
 
 TATNEFT
 tatneft               концепт с конкурса, 16:10
@@ -43,8 +41,12 @@ student-1, student-2  квадрат
 
 ВОЛОНТЁРСТВО
 silence-kids          выступление детей, вертикальный 4:5
-nochlezhka-1 … 3      квадрат
-triglinki             Алена рядом со своими картинами, 16:10
 
 ВНЕ РАБОТЫ (квадрат)
 art-1 … art-4, hockey
+
+ТРИГЛИНКИ (вместо одного triglinki)
+triglinki-1           Алена у картин, вертикальный (большое окно слева)
+triglinki-2           стена с картинами, горизонтальный
+triglinki-3           зал, вертикальный
+triglinki-4           стол с работами, вертикальный
