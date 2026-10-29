@@ -414,3 +414,57 @@ figcaption{margin-top:10px}
 .dip-grid a{display:block;transition:transform .25s}
 .dip-grid a:hover{transform:translateY(-4px)}
 @media (max-width:900px){.dip-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* v9: diplomas — 3 vertical + 1 horizontal in one even row */
+.dip-grid{grid-template-columns:repeat(5,minmax(0,1fr));align-items:stretch}
+.dip-grid figure{display:flex;flex-direction:column}
+.dip-grid a{flex:1;display:flex}
+.media--doc{aspect-ratio:1200/1653;width:100%;background:none;padding:0}
+.media--doc.loaded{background:none}
+.media--doc img{object-fit:contain;padding:0;filter:drop-shadow(0 6px 18px rgba(0,0,0,.12))}
+.dip-wide{grid-column:span 2}
+.dip-wide .media--doc{aspect-ratio:auto;height:100%}
+@media (max-width:900px){
+  .dip-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .dip-wide{grid-column:1/-1}
+  .dip-wide .media--doc{aspect-ratio:2264/1636;height:auto}
+}
+
+/* v9: body text a step larger on every screen */
+.body,.facts li,.job>p:last-child,.r>p:last-child,.cols3 p:last-child,.steps p:last-child{font-size:clamp(16px,calc(.4vw + 11px),21px);line-height:1.55}
+.case-step .body,.case-facts p:last-child{font-size:clamp(17px,calc(.4vw + 11.5px),22px)}
+.mono{font-size:clamp(12px,calc(.15vw + 10px),15px)}
+.proof span{font-size:clamp(14px,calc(.3vw + 10px),18px)}
+.small-list li{font-size:clamp(15px,calc(.35vw + 10px),19px)}
+
+/* v10: slider moves by transform, so no sliver of the previous slide shows */
+.slider{overflow:hidden}
+.slider__track{overflow:visible;scroll-snap-type:none;transition:transform .45s cubic-bezier(.2,.7,.2,1);touch-action:pan-y;will-change:transform}
+@media (prefers-reduced-motion:reduce){.slider__track{transition:none}}
+
+/* portrait: safe on iOS Safari (stretch + aspect-ratio bug) */
+.about>.media--portrait{align-self:start;width:100%}
+@media (max-width:900px){.about>.media--portrait{max-width:none;min-height:calc((100vw - 2 * var(--pad)) * 1.333)}}
+
+/* research list: no lines, generous spacing */
+.plain-list li{border:0 !important;padding:0;margin-bottom:clamp(20px,2.2vw,32px)}
+.plain-list li:last-child{margin-bottom:0}
+
+/* Silence of Nature: posters on top, two animations below */
+.sil-media{display:flex;flex-direction:column;gap:14px}
+.sil-videos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.media--vert{aspect-ratio:9/16;background-color:#d8d3c8}
+.media--vert.loaded{background:#111}
+
+/* Nochlezhka */
+.noch{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:clamp(24px,5vw,72px);margin-top:clamp(48px,6vw,88px);padding-top:clamp(32px,4vw,48px);border-top:1px solid var(--ink);align-items:start}
+.noch__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.media--post{aspect-ratio:4/5}
+@media (max-width:900px){.noch{grid-template-columns:1fr}.noch__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* big titles and numbers inside text columns never overflow */
+.noch>div:first-child{container-type:inline-size;min-width:0}
+@supports (font-size:1cqi){ .noch .giant--sm{font-size:clamp(34px,15cqi,96px)} }
+.vol .stats3 .num,.teach .stats3 .num{font-size:clamp(30px,8.5cqi,60px);white-space:nowrap}
+.vol .stats3,.teach .stats3{gap:clamp(16px,3cqi,32px)}
+.teach>div:first-child{container-type:inline-size;min-width:0}
+@supports (font-size:1cqi){ .noch .giant--sm{font-size:clamp(32px,12.5cqi,96px)} }

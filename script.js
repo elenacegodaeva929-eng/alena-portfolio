@@ -3,7 +3,27 @@
 
   /* after a reload, always start from the first screen (links with #section still work) */
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-  if (!location.hash) window.scrollTo(0, 0);
+  var isHome = !!document.getElementById('hero');
+  var navType = '';
+  try { navType = (performance.getEntriesByType('navigation')[0] || {}).type || ''; } catch (e) {}
+  var returnY = null;
+  if (isHome) { try { returnY = sessionStorage.getItem('ak-return'); sessionStorage.removeItem('ak-return'); } catch (e) {} }
+  function jump(y) { window.scrollTo({ top: y, left: 0, behavior: 'instant' }); }
+  if (isHome && returnY !== null && navType !== 'reload') {
+    /* came back from a case page: open where the visitor clicked "Read the case" */
+    var y = parseInt(returnY, 10) || 0;
+    jump(y);
+    requestAnimationFrame(function () { jump(y); });
+    window.addEventListener('load', function () { jump(y); });
+  } else if (!location.hash) {
+    jump(0);
+  }
+  if (isHome) {
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a[href$="parkovkin.html"], a[href$="vibrate-higher.html"]');
+      if (a) { try { sessionStorage.setItem('ak-return', String(Math.round(window.scrollY))); } catch (err) {} }
+    });
+  }
 
   var fine = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -41,7 +61,7 @@
     'sustainable fashion label','independent radio','after-school tutors','community fridge',
     'family workshop','unsigned bands','first exhibition','app with ten users','self-published book'
   ];
-  var highlights = ['Parkovkin','Vibrate Higher','Brief Builder','Silence of Nature','Yanissaari'];
+  var highlights = ['Parkovkin','Vibrate Higher','Brief Builder','Silence of Nature','Nochlezhka'];
 
   var hero = document.getElementById('hero');
   var back = document.getElementById('crowdBack');
@@ -226,15 +246,22 @@
     var track = sl.querySelector('.slider__track');
     var count = sl.querySelector('.slider__count');
     var total = track.children.length;
-    function current() { return Math.round(track.scrollLeft / track.clientWidth); }
-    function update() { count.textContent = (current() + 1) + ' / ' + total; }
+    var i = 0;
+    function go(n) {
+      i = (n + total) % total;
+      track.style.transform = 'translateX(' + (-100 * i) + '%)';
+      count.textContent = (i + 1) + ' / ' + total;
+    }
     sl.querySelectorAll('.slider__btn').forEach(function (b) {
-      b.addEventListener('click', function () {
-        var dir = parseInt(b.getAttribute('data-dir'), 10);
-        var next = (current() + dir + total) % total;
-        track.scrollTo({ left: next * track.clientWidth, behavior: reduced ? 'auto' : 'smooth' });
-      });
+      b.addEventListener('click', function () { go(i + parseInt(b.getAttribute('data-dir'), 10)); });
     });
-    var t; track.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(update, 60); }, { passive: true });
+    var x0 = null;
+    track.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 40) go(i + (dx < 0 ? 1 : -1));
+      x0 = null;
+    }, { passive: true });
   });
 })();
