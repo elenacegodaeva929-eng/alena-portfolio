@@ -511,3 +511,5 @@ figcaption{margin-top:10px}
 
 .logos{grid-template-columns:repeat(5,minmax(0,1fr))}
 @media (max-width:600px){.logos{grid-template-columns:repeat(6,minmax(0,1fr))}.logos>.media--logo{grid-column:span 2}.logos>.media--logo:nth-child(4){grid-column:2/span 2}}
+
+.dip-grid+.logos{margin-top:clamp(36px,4.5vw,64px);margin-bottom:0}

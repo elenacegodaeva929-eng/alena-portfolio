@@ -133,34 +133,41 @@
       }, 250);
     });
 
-    var inside = false;
-    hero.addEventListener('mousemove', function (e) {
+    /* spotlight: follows the cursor over the crowd; otherwise it keeps wandering */
+    var mobile = window.matchMedia('(max-width: 600px)').matches || !fine;
+    var speed = mobile ? 0.012 : 0.006;   /* faster on phones */
+    var ease = mobile ? 0.05 : 0.03;
+    var cx = null, cy = null, t = 0, followUntil = 0;
+    function overCrowd(target) {
+      return target && target.closest && target.closest('#hero') && !target.closest('#heroContent, .topbar, .hero__hint');
+    }
+    document.addEventListener('mousemove', function (e) {
+      if (!overCrowd(e.target)) { followUntil = 0; return; }
       var r = hero.getBoundingClientRect();
-      inside = true;
-      setSpot(e.clientX - r.left, e.clientY - r.top);
-    });
-    hero.addEventListener('mouseleave', function () { inside = false; });
+      cx = e.clientX - r.left; cy = e.clientY - r.top;
+      setSpot(cx, cy);
+      followUntil = Infinity;   /* follow while the cursor is over the crowd */
+    }, { passive: true });
+    hero.addEventListener('mouseleave', function () { followUntil = 0; });
+    window.addEventListener('scroll', function () { followUntil = 0; }, { passive: true });
+    hero.addEventListener('touchstart', function (e) {
+      var r = hero.getBoundingClientRect();
+      cx = e.touches[0].clientX - r.left; cy = e.touches[0].clientY - r.top;
+      setSpot(cx, cy);
+      followUntil = Date.now() + 2500;
+    }, { passive: true });
 
     if (!reduced) {
-      var t = 0, cx = null, cy = null, holdUntil = 0;
-      hero.addEventListener('touchstart', function (e) {
-        var r = hero.getBoundingClientRect();
-        cx = e.touches[0].clientX - r.left;
-        cy = e.touches[0].clientY - r.top;
-        setSpot(cx, cy);
-        holdUntil = Date.now() + 2500;
-      }, { passive: true });
-
       (function loop() {
-        if (!inside && Date.now() > holdUntil) {
+        if (Date.now() > followUntil) {
           var r = hero.getBoundingClientRect();
           if (r.bottom > 0) {
-            t += 0.006;
+            t += speed;
             var areaH = (content ? content.offsetTop : r.height);
             var gx = r.width * (0.5 + 0.38 * Math.sin(t * 1.3));
             var gy = 80 + (areaH - 120) * (0.5 + 0.45 * Math.sin(t * 2.1));
             if (cx === null) { cx = gx; cy = gy; }
-            cx += (gx - cx) * 0.03; cy += (gy - cy) * 0.03;
+            cx += (gx - cx) * ease; cy += (gy - cy) * ease;   /* glides from wherever the cursor left it */
             setSpot(cx, cy);
           }
         }
