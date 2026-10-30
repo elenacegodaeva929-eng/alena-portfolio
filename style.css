@@ -468,3 +468,46 @@ figcaption{margin-top:10px}
 .vol .stats3,.teach .stats3{gap:clamp(16px,3cqi,32px)}
 .teach>div:first-child{container-type:inline-size;min-width:0}
 @supports (font-size:1cqi){ .noch .giant--sm{font-size:clamp(32px,12.5cqi,96px)} }
+
+/* ===================== v11 ===================== */
+.nowrap{white-space:nowrap}
+/* Silence videos: cropped, both the same size */
+.media--vert{aspect-ratio:360/468}
+/* any video inside a slider is shown whole */
+.slider .media video{object-fit:contain}
+/* sliders can hold figures with captions (case page) */
+.slider__track{align-items:flex-start}
+.slider__track>*{flex:0 0 100%;min-width:0}
+.slider__track figcaption{margin-top:10px}
+
+/* diploma lightbox */
+.lightbox{position:fixed;inset:0;z-index:900;display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,56px);background:rgba(18,18,18,.88);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.lightbox.is-open{opacity:1;visibility:visible}
+.lightbox__fig{margin:0;max-width:min(92vw,1100px);max-height:100%;display:flex;flex-direction:column;align-items:center;gap:12px}
+.lightbox__fig img{max-width:100%;max-height:calc(100vh - 140px);max-height:calc(100svh - 140px);object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.lightbox__fig figcaption{color:var(--paper);text-align:center}
+.lightbox__close{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));right:16px;width:48px;height:48px;border-radius:50%;border:1px solid var(--paper);background:transparent;color:var(--paper);font-size:28px;line-height:1;display:flex;align-items:center;justify-content:center}
+.lightbox__close:hover{background:var(--paper);color:var(--ink)}
+.dip-grid a{cursor:zoom-in}
+
+/* mobile fixes */
+@media (max-width:900px){
+  .vol2{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  /* crowd: phrases may wrap, so justified lines have no empty corridors */
+  .crowd span{display:inline;white-space:normal;margin:0}
+  .crowd .hl{white-space:nowrap}
+  .crowd{word-spacing:0;font-size:11.5px}
+}
+
+/* logos of awarding organizations, above the diplomas */
+.logos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,3vw,48px);align-items:center;margin-bottom:clamp(28px,3.5vw,48px)}
+.media--logo{height:clamp(56px,6vw,96px);background:repeating-linear-gradient(45deg,#dcd8cf 0 8px,#d2cec4 8px 16px)}
+.media--logo.loaded{background:none}
+.media--logo img{object-fit:contain;padding:4px;filter:grayscale(1);opacity:.85;transition:filter .3s,opacity .3s}
+.media--logo:hover img{filter:none;opacity:1}
+@media (max-width:600px){.logos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.logos{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media (max-width:600px){.logos{grid-template-columns:repeat(6,minmax(0,1fr))}.logos>.media--logo{grid-column:span 2}.logos>.media--logo:nth-child(4){grid-column:2/span 2}}
