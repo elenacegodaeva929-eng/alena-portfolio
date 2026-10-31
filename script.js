@@ -272,7 +272,7 @@
     }, { passive: true });
   });
   /* ================= DIPLOMA LIGHTBOX ================= */
-  var dipLinks = document.querySelectorAll('.dip-grid a');
+  var dipLinks = document.querySelectorAll('.dip-grid a, .art-grid a');
   if (dipLinks.length) {
     var lb = document.createElement('div');
     lb.className = 'lightbox';
@@ -285,7 +285,8 @@
     var lastFocus = null;
     function openLb(a) {
       lastFocus = a;
-      lbImg.src = a.getAttribute('href');
+      var shown = a.querySelector('img');
+      lbImg.src = shown ? (shown.currentSrc || shown.src) : a.getAttribute('href');
       var m = a.querySelector('.media'); lbImg.alt = m ? (m.getAttribute('data-alt') || '') : '';
       var cap = a.parentNode.querySelector('figcaption'); lbCap.textContent = cap ? cap.textContent : '';
       lb.classList.add('is-open');

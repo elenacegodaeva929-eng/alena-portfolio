@@ -513,3 +513,31 @@ figcaption{margin-top:10px}
 @media (max-width:600px){.logos{grid-template-columns:repeat(6,minmax(0,1fr))}.logos>.media--logo{grid-column:span 2}.logos>.media--logo:nth-child(4){grid-column:2/span 2}}
 
 .dip-grid+.logos{margin-top:clamp(36px,4.5vw,64px);margin-bottom:0}
+
+/* ===================== v12: fine art block ===================== */
+.art{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(24px,5vw,72px);align-items:start}
+.art__text{container-type:inline-size;min-width:0}
+@supports (font-size:1cqi){ .art .giant--md{font-size:clamp(44px,17cqi,128px)} .art .stats3 .num{font-size:clamp(30px,10cqi,60px)} }
+.art__text>.mono{margin-top:4px}
+.facts--light li{border-bottom:1px solid var(--ink)}
+.facts--light b{color:var(--ink)}
+.art .facts{margin-top:28px}
+.art-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.art-grid a{display:block;cursor:zoom-in;transition:transform .25s}
+.art-grid a:hover{transform:translateY(-4px)}
+.media--art{aspect-ratio:4/5}
+.lists--3{grid-template-columns:minmax(0,.6fr) minmax(0,1fr) minmax(0,1fr)}
+.hockey .media{max-width:320px}
+@media (max-width:900px){
+  .art{grid-template-columns:1fr}
+  .lists--3{grid-template-columns:1fr}
+}
+@media (max-width:600px){.art-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Brief Builder animation: fill the empty bands with the video's own light grey */
+.slider .media.slide--light.loaded,.slider .media.slide--light video{background:#f0f1f1}
+/* paintings: first row horizontal, second row vertical */
+.media--art-h{aspect-ratio:4/3}
+@media (max-width:600px){
+  .art-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .art-grid a:nth-child(-n+3){grid-column:1/-1}
+}
