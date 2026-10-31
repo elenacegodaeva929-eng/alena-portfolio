@@ -541,3 +541,17 @@ figcaption{margin-top:10px}
   .art-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
   .art-grid a:nth-child(-n+3){grid-column:1/-1}
 }
+
+/* Triglinki: every photo shown whole — column widths match the photos' proportions */
+.trig{aspect-ratio:auto;grid-template-columns:1.0625fr .5fr .5fr;grid-template-rows:auto auto}
+.trig .media{height:auto}
+.trig-a{grid-column:1;grid-row:1/3;aspect-ratio:auto;height:100% !important}
+.trig-b{grid-column:2/4;grid-row:1;aspect-ratio:821/616}
+.trig-c{grid-column:2;grid-row:2;aspect-ratio:3/4}
+.trig-d{grid-column:3;grid-row:2;aspect-ratio:3/4}
+.trig-b img,.trig-c img,.trig-d img{object-fit:contain}
+.trig-a img{object-position:center}
+@media (max-width:600px){.trig{aspect-ratio:auto}}
+.trig .trig-a{aspect-ratio:auto;height:100%}
+.trig .trig-b{aspect-ratio:821/616;height:auto}
+.trig .trig-c,.trig .trig-d{aspect-ratio:3/4;height:auto}
