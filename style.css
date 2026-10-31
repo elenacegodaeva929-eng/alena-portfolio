@@ -556,3 +556,12 @@ figcaption{margin-top:10px}
 .trig .trig-b{aspect-ratio:821/616;height:auto}
 .trig .trig-c,.trig .trig-d{aspect-ratio:3/4;height:auto}
 .trig .trig-b img,.trig .trig-c img,.trig .trig-d img{object-fit:cover}
+
+/* v13: paintings get the full width; text sits in two columns above them */
+.art{grid-template-columns:1fr;gap:clamp(36px,4.5vw,64px)}
+.art__text{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:end;container-type:normal}
+.art__intro,.art__facts{container-type:inline-size;min-width:0}
+@supports (font-size:1cqi){ .art__intro .giant--md{font-size:clamp(44px,17cqi,128px)} .art__facts .stats3 .num{font-size:clamp(30px,10cqi,60px)} }
+.art__facts .stats3{margin-top:0}
+.art-grid{gap:clamp(10px,1.4vw,20px)}
+@media (max-width:900px){.art__text{grid-template-columns:1fr;align-items:start}}
