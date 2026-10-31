@@ -305,4 +305,27 @@
     lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && lb.classList.contains('is-open')) closeLb(); });
   }
+  /* ================= TRIGLINKI LAYOUT =================
+     Columns are sized from the real proportions of the photos,
+     so the top-right photo is always shown whole and the left photo
+     ends exactly where the right column ends. */
+  var trig = document.querySelector('.trig');
+  if (trig) {
+    var relayout = function () {
+      var ratio = function (cls) {
+        var im = trig.querySelector('.' + cls + ' img');
+        return im && im.naturalWidth ? im.naturalWidth / im.naturalHeight : null;
+      };
+      var ra = ratio('trig-a') || 0.75, rb = ratio('trig-b') || 4 / 3;
+      var rc = ratio('trig-c') || 0.75, rd = ratio('trig-d') || 0.75, rcd = (rc + rd) / 2;
+      ['trig-b', 'trig-c', 'trig-d'].forEach(function (c, k) {
+        var r = [rb, rcd, rcd][k];
+        trig.querySelector('.' + c).style.aspectRatio = r.toFixed(4);
+      });
+      var left = ra * (1 / rb + 1 / (2 * rcd));
+      trig.style.gridTemplateColumns = left.toFixed(4) + 'fr .5fr .5fr';
+    };
+    relayout();
+    new MutationObserver(relayout).observe(trig, { childList: true, subtree: true });
+  }
 })();

@@ -555,3 +555,4 @@ figcaption{margin-top:10px}
 .trig .trig-a{aspect-ratio:auto;height:100%}
 .trig .trig-b{aspect-ratio:821/616;height:auto}
 .trig .trig-c,.trig .trig-d{aspect-ratio:3/4;height:auto}
+.trig .trig-b img,.trig .trig-c img,.trig .trig-d img{object-fit:cover}
