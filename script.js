@@ -209,27 +209,36 @@
   var imgExt = ['webp', 'jpg', 'jpeg', 'png', 'gif'];
   var vidExt = ['mp4', 'webm'];
 
-  function tryVideo(box, base, i) {
-    if (i >= vidExt.length) return;
+  /* exts: list of extensions to try; a slot with data-ext="webp" (or "mp4")
+     only ever loads that one format, so other uploaded copies are ignored */
+  function tryVideo(box, base, i, exts) {
+    exts = exts || vidExt;
+    if (i >= exts.length) return;
     var v = document.createElement('video');
     v.muted = true; v.loop = true; v.autoplay = true; v.playsInline = true;
     v.setAttribute('playsinline', ''); v.preload = 'auto';
     v.onloadeddata = function () { box.appendChild(v); box.classList.add('loaded'); v.play().catch(function () {}); };
-    v.onerror = function () { tryVideo(box, base, i + 1); };
-    v.src = base + '.' + vidExt[i];
+    v.onerror = function () { tryVideo(box, base, i + 1, exts); };
+    v.src = base + '.' + exts[i];
   }
 
-  function tryImage(box, base, i) {
-    if (i >= imgExt.length) { tryVideo(box, base, 0); return; }
+  function tryImage(box, base, i, exts, videoAfter) {
+    exts = exts || imgExt;
+    if (i >= exts.length) { if (videoAfter !== false) tryVideo(box, base, 0); return; }
     var img = new Image();
     img.alt = box.getAttribute('data-alt') || '';
     img.decoding = 'async';
     img.onload = function () { box.appendChild(img); box.classList.add('loaded'); };
-    img.onerror = function () { tryImage(box, base, i + 1); };
-    img.src = base + '.' + imgExt[i];
+    img.onerror = function () { tryImage(box, base, i + 1, exts, videoAfter); };
+    img.src = base + '.' + exts[i];
   }
 
-  function loadSlot(s) { tryImage(s, s.getAttribute('data-src'), 0); }
+  function loadSlot(s) {
+    var base = s.getAttribute('data-src'), ext = s.getAttribute('data-ext');
+    if (!ext) { tryImage(s, base, 0); return; }
+    if (ext === 'mp4' || ext === 'webm') { tryVideo(s, base, 0, [ext]); return; }
+    tryImage(s, base, 0, [ext], false);
+  }
   var slots = Array.prototype.filter.call(document.querySelectorAll('.media[data-src]'), function (s) { return !s.closest('.slider'); });
   var sliders = document.querySelectorAll('.slider');
   if ('IntersectionObserver' in window) {

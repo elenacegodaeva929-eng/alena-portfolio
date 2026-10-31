@@ -565,3 +565,11 @@ figcaption{margin-top:10px}
 .art__facts .stats3{margin-top:0}
 .art-grid{gap:clamp(10px,1.4vw,20px)}
 @media (max-width:900px){.art__text{grid-template-columns:1fr;align-items:start}}
+
+/* v14: paintings back on the right, a bit larger than before */
+.art{grid-template-columns:minmax(0,.8fr) minmax(0,1.5fr);gap:clamp(24px,4vw,64px);align-items:start}
+.art__text{display:block;container-type:inline-size}
+.art__intro,.art__facts{container-type:inline-size}
+.art__facts{margin-top:28px}
+.art-grid{gap:12px}
+@media (max-width:900px){.art{grid-template-columns:1fr}}
