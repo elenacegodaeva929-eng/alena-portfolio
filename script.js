@@ -338,3 +338,18 @@
     new MutationObserver(relayout).observe(trig, { childList: true, subtree: true });
   }
 })();
+
+/* v15: diplomas — size each slot from the scan's real proportions */
+(function () {
+  var grid = document.querySelector('.dip-grid');
+  if (!grid) return;
+  function fit() {
+    grid.querySelectorAll('figure').forEach(function (f) {
+      var im = f.querySelector('img');
+      if (im && im.naturalWidth) f.style.setProperty('--r', (im.naturalWidth / im.naturalHeight).toFixed(4));
+    });
+  }
+  fit();
+  grid.addEventListener('load', fit, true);
+  new MutationObserver(fit).observe(grid, { childList: true, subtree: true });
+})();

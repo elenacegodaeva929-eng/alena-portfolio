@@ -573,3 +573,12 @@ figcaption{margin-top:10px}
 .art__facts{margin-top:28px}
 .art-grid{gap:12px}
 @media (max-width:900px){.art{grid-template-columns:1fr}}
+
+/* v15: diplomas — one justified row, every document exactly the same height */
+.dip-grid{display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(14px,2vw,28px)}
+.dip-grid figure{--r:.726;flex:var(--r) 1 0;min-width:0;display:block;margin:0}
+.dip-grid .dip-wide{--r:1.384}
+.dip-grid a{display:block;flex:none}
+.dip-grid .media--doc,.dip-grid .dip-wide .media--doc{aspect-ratio:var(--r);width:100%;height:auto;background:none}
+.dip-grid .media--doc img{width:100%;height:100%;object-fit:contain;padding:0}
+@media (max-width:900px){.dip-grid .dip-wide{flex-basis:100%}}
