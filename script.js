@@ -265,7 +265,8 @@
     var i = 0;
     function go(n) {
       i = (n + total) % total;
-      track.style.transform = 'translateX(' + (-100 * i) + '%)';
+      /* 4px gap between slides: sub-pixel rounding can't reveal the neighbour's edge */
+      track.style.transform = 'translateX(calc(' + (-100 * i) + '% - ' + (4 * i) + 'px))';
       count.textContent = (i + 1) + ' / ' + total;
     }
     sl.querySelectorAll('.slider__btn').forEach(function (b) {

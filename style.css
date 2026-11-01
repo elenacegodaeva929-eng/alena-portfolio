@@ -582,3 +582,6 @@ figcaption{margin-top:10px}
 .dip-grid .media--doc,.dip-grid .dip-wide .media--doc{aspect-ratio:var(--r);width:100%;height:auto;background:none}
 .dip-grid .media--doc img{width:100%;height:100%;object-fit:contain;padding:0}
 @media (max-width:900px){.dip-grid .dip-wide{flex-basis:100%}}
+
+/* v16: slides sit 4px apart, so no sliver of the previous slide shows at the edge */
+.slider__track{gap:4px}
