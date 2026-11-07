@@ -574,14 +574,17 @@ figcaption{margin-top:10px}
 .art-grid{gap:12px}
 @media (max-width:900px){.art{grid-template-columns:1fr}}
 
-/* v15: diplomas — one justified row, every document exactly the same height */
-.dip-grid{display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(14px,2vw,28px)}
-.dip-grid figure{--r:.726;flex:var(--r) 1 0;min-width:0;display:block;margin:0}
-.dip-grid .dip-wide{--r:1.384}
-.dip-grid a{display:block;flex:none}
-.dip-grid .media--doc,.dip-grid .dip-wide .media--doc{aspect-ratio:var(--r);width:100%;height:auto;background:none}
-.dip-grid .media--doc img{width:100%;height:100%;object-fit:contain;padding:0}
-@media (max-width:900px){.dip-grid .dip-wide{flex-basis:100%}}
-
-/* v16: slides sit 4px apart, so no sliver of the previous slide shows at the edge */
-.slider__track{gap:4px}
+/* ===================== v15: lightbox for every picture ===================== */
+.media.loaded img,.media.loaded video{cursor:zoom-in}
+.lightbox__stage{display:flex;align-items:center;justify-content:center;max-width:100%}
+.lightbox__stage img,.lightbox__stage video{max-width:min(92vw,1400px);max-height:calc(100vh - 150px);max-height:calc(100svh - 150px);object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.4);background:#111}
+.lightbox__fig{max-width:min(92vw,1400px)}
+.lightbox__nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;border:1px solid var(--paper);background:rgba(18,18,18,.4);color:var(--paper);font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;z-index:2}
+.lightbox__nav:hover{background:var(--paper);color:var(--ink)}
+.lightbox__nav--prev{left:clamp(8px,2vw,32px)}
+.lightbox__nav--next{right:clamp(8px,2vw,32px)}
+.lightbox__nav[hidden]{display:none}
+@media (max-width:600px){
+  .lightbox__nav{top:auto;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:none;width:46px;height:46px}
+  .lightbox__stage img,.lightbox__stage video{max-height:calc(100svh - 200px)}
+}
