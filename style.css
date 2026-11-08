@@ -588,3 +588,29 @@ figcaption{margin-top:10px}
   .lightbox__nav{top:auto;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:none;width:46px;height:46px}
   .lightbox__stage img,.lightbox__stage video{max-height:calc(100svh - 200px)}
 }
+
+/* ===================== v16: mobile fixes ===================== */
+
+/* 1. Mobile browsers (Android Chrome / Yandex) were auto-inflating text inside
+   narrow blocks — that is why some mono captions showed up twice as large as
+   identical ones elsewhere. This switches that "font boosting" off. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{text-size-adjust:100%}
+
+/* 2. Diplomas: every certificate sits in the same white card, so the three
+   vertical ones line up top and bottom and no page-coloured bands show through. */
+.media--doc,.media--doc.loaded{background:#fff;padding:clamp(6px,1vw,10px);
+  box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.media--doc img{padding:0;filter:none}
+/* captions of different length used to stretch the first card taller than
+   the rest — the card now keeps its own proportions, the caption sits below */
+.dip-grid figure:not(.dip-wide){display:block}
+.dip-grid figure:not(.dip-wide)>a{display:block;flex:none}
+.dip-grid figure:not(.dip-wide) .media--doc{aspect-ratio:1200/1653;height:auto}
+
+/* 3. Paintings on phones: one even grid instead of three huge + three tiny. */
+@media (max-width:600px){
+  .art-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .art-grid a:nth-child(-n+3){grid-column:auto}
+  .media--art,.media--art-h{aspect-ratio:1}
+}
