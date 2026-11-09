@@ -608,6 +608,14 @@ body{text-size-adjust:100%}
 .dip-grid figure:not(.dip-wide)>a{display:block;flex:none}
 .dip-grid figure:not(.dip-wide) .media--doc{aspect-ratio:1200/1653;height:auto}
 
+/* v17: diploma row — three identical cards, nothing stretches to its neighbour */
+.dip-grid{align-items:start}
+.dip-grid figure:not(.dip-wide){display:block;align-self:start}
+.dip-grid figure:not(.dip-wide)>a{display:block;flex:none;height:auto}
+.dip-grid figure:not(.dip-wide) .media--doc{
+  aspect-ratio:1200/1653 !important;height:auto !important;min-height:0;align-self:start}
+.dip-grid .dip-wide .media--doc{aspect-ratio:2264/1636 !important;height:auto !important}
+
 /* 3. Paintings on phones: one even grid instead of three huge + three tiny. */
 @media (max-width:600px){
   .art-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
